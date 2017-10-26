@@ -12,27 +12,17 @@ class App extends Component {
   }
 
   render() {
-    if (this.state.hasError) {
-      return (
-        <div className="App">
-          Something went wrong
-        </div>
-      );
-    }
     return (
       <div className="App" >
-        <Header />
-        <Middle />
-        <Footer />
+        <ErrorBoundary>
+          <Header />
+          <Middle />
+          <Footer />
+        </ErrorBoundary>
       </div>
     );
-
   }
 
-  // componentDidCatch(error, info) {
-  //   console.log("Component caught error app");
-  //   this.setState({ hasError: true });
-  // }
 }
 
 export default App;

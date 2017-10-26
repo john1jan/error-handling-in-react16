@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MiddleLeft from "./MiddleLeft"
 import MiddleRight from "./MiddleRight"
+import ErrorBoundary from './ErrorBoundary'
 
 class Middle extends Component {
 
@@ -14,7 +15,9 @@ class Middle extends Component {
           <MiddleLeft />
         </div>
         <div style={{ flex: 1 }}>
-          <MiddleRight />
+          <ErrorBoundary>
+            <MiddleRight />
+          </ErrorBoundary >
         </div>
       </div>
     );
