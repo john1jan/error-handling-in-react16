@@ -14,11 +14,11 @@ class PromiseError extends Component {
 
   render() {
     return (
-      <div style={{ padding: 20, backgroundColor: "#fbe9e7" }}>
+      <div style={{ padding: 20, backgroundColor: "#fbe9e7", overflow: "scroll", height: "100%" }}>
         I am the PromiseError 👹
         {
           this.state.posts.map((item) => {
-            return <div>
+            return <div style={{ textAlign: "left" }}>
               {item.title}
             </div>
           })
@@ -30,18 +30,17 @@ class PromiseError extends Component {
 
 
   componentDidMount() {
-    // this.props.somethingUndefined();
     fetch("https://jsonplaceholder.typicode.com/posts/1").then((response) => {
       return response.json();
     }).then((data) => {
-      this.setState({
-        posts: data
-      });
-      // throw new Error("I am n  ew Error");
+      console.log("data", data);
+      throw new Error("Error in promise");  // this will not trigger error boundary in because it doesnot affect render 
+      // this.setState({     // this method wil trigger error boundary and will show fallback ui
+      //   posts: data
+      // })
+    }).catch((error) => {
+      console.log("caught error", error);
     })
-    // .catch((error) => {
-    //   console.log("caught error");
-    // })
   }
 }
 
