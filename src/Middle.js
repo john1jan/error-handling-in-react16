@@ -24,17 +24,6 @@ class Middle extends Component {
   }
 
 
-
-  componentDidMount() {
-    // this.props.somethingUndefined();
-    // fetch("https://jsonplaceholder.typicode.com/posts").then((response) => {
-    //   return response.json();
-    // }).then((data) => {
-    //   console.log("data", data);
-    // }).catch((error) => {
-    //   console.log("caught error");
-    // })
-  }
 }
 
 export default Middle;

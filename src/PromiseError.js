@@ -37,10 +37,11 @@ class PromiseError extends Component {
       this.setState({
         posts: data
       });
-      // throw new Error("I am new Error");
-    }).catch((error) => {
-      console.log("caught error");
+      // throw new Error("I am n  ew Error");
     })
+    // .catch((error) => {
+    //   console.log("caught error");
+    // })
   }
 }
 
