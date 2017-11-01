@@ -34,10 +34,10 @@ class PromiseError extends Component {
       return response.json();
     }).then((data) => {
       console.log("data", data);
-      throw new Error("Error in promise");  // this will not trigger error boundary in because it doesnot affect render 
-      // this.setState({     // this method wil trigger error boundary and will show fallback ui
-      //   posts: data
-      // })
+      // throw new Error("Error in promise");  // this will not trigger error boundary in because it doesnot affect render 
+      this.setState({     // this method wil trigger error boundary and will show fallback ui
+        posts: data
+      })
     }).catch((error) => {
       console.log("caught error", error);
     })
