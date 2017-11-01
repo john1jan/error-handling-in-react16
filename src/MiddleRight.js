@@ -8,7 +8,7 @@ class MiddleRight extends Component {
           <h3>Right</h3>
         </div>
         <div style={{ flex: 1, justifyContent: "flex-end", display: "flex", flexDirection: "column" }}>
-          {/* <Culprit /> */}
+          {<Culprit />}
         </div>
       </div >
     );

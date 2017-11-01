@@ -6,7 +6,7 @@ class Culprit extends Component {
 
     return (
       <div style={{ padding: 20, backgroundColor: "#fbe9e7" }}>
-        I am the culprit 👹  {this.props.something()}
+        I am the culprit 👹 
       </div>
     );
   }
