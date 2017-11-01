@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Culprit from "./Culprit"
 class MiddleRight extends Component {
-
   render() {
     return (
       <div style={{ flex: 1, display: "flex", justifyContent: "center", flexDirection: "column", height: "100%" }}>
@@ -9,11 +8,12 @@ class MiddleRight extends Component {
           <h3>Right</h3>
         </div>
         <div style={{ flex: 1, justifyContent: "flex-end", display: "flex", flexDirection: "column" }}>
-          <Culprit />
+          {/* <Culprit /> */}
         </div>
       </div >
     );
   }
+
 }
 
 export default MiddleRight;
