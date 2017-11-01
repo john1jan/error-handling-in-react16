@@ -8,22 +8,21 @@ class Culprit extends Component {
       <div style={{ padding: 20, backgroundColor: "#fbe9e7" }}>
         I am the culprit 👹
 
-        <button onClick={this.onTriggerClick}>Trigger</button>
-
       </div>
     );
   }
 
-  onTriggerClick = () => {
-    // throw new Error("Blaaaa");
-    this.setState(state => {
-      throw new Error("Error from Event Click");
-      return { ...state }
-    })
-  }
 
   componentDidMount() {
-    // throw new Error("Blaaaa");
+    try {
+      // throw new Error("I am error from try");    this will not trigger error boundary 
+      this.setState(state => {
+        throw new Error("I am error from try");  // This will trigger error boundary and will show fallback ui
+        return { ...state }
+      })
+    } catch (error) {
+      console.log("Caught error", error)
+    }
   }
 
 }
